@@ -25,7 +25,7 @@ const LandingPage = () => {
           Welcome to the Hockey Stats. <br/>A website meant for you to easily track your stats.
         </Card.Body>
         <Card.Footer>
-          <Button disabled={isLoading} onClick={null}>
+          <Button disabled={isLoading} onClick={login}>
             Log in with Google
           </Button>
         </Card.Footer>

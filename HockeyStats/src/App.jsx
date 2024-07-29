@@ -1,8 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+import AppLayout from './components/ui/AppLayout';
+import DashboardPage from './components/pages/DashboardPage';
 import GlobalStyles from './components/style/GlobalStyles';
 import LandingPage from './components/pages/LandingPage';
+import ProtectedRoute from './components/ui/ProtectedRoute';
 import { Toaster } from 'react-hot-toast';
 
 const queryClient = new QueryClient({
@@ -20,6 +23,15 @@ const App = () => {
         <GlobalStyles/>
         <BrowserRouter>
           <Routes>
+            <Route 
+              element={
+                <ProtectedRoute>
+                  <AppLayout/>
+                </ProtectedRoute>
+              }
+            >
+              <Route path="dashboard" element={<DashboardPage/>}/>
+            </Route>
             <Route index element={<LandingPage/>}/>
           </Routes>
         </BrowserRouter>
