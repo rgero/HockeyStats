@@ -30,7 +30,7 @@ const Header = () => {
     return (
       <StyledHeader>
         <Title>
-          The Achievement Tracker
+          Hockey Stats
         </Title>
         <StyledUser>
           <UserAvatar/>
