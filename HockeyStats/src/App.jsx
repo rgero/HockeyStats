@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+import Account from './components/pages/Account';
 import AppLayout from './components/ui/AppLayout';
 import { DarkModeProvider } from './context/DarkModeContext';
 import DashboardPage from './components/pages/DashboardPage';
@@ -36,6 +37,7 @@ const App = () => {
             >
               <Route index element={<Navigate replace to="dashboard"/>}/>
               <Route path="dashboard" element={<DashboardPage/>}/>
+              <Route path='account' element={<Account/>} />
             </Route>
             <Route path="landing" element={<LandingPage/>} />
             <Route path='*' element={<PageNotFound/>} />
