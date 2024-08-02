@@ -5,6 +5,7 @@ import AppLayout from './components/ui/AppLayout';
 import DashboardPage from './components/pages/DashboardPage';
 import GlobalStyles from './components/style/GlobalStyles';
 import LandingPage from './components/pages/LandingPage';
+import PageNotFound from './components/pages/PageNotFound';
 import ProtectedRoute from './components/ui/ProtectedRoute';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Toaster } from 'react-hot-toast';
@@ -35,6 +36,7 @@ const App = () => {
               <Route path="dashboard" element={<DashboardPage/>}/>
             </Route>
             <Route path="landing" element={<LandingPage/>} />
+            <Route path='*' element={<PageNotFound/>} />
           </Routes>
         </BrowserRouter>
         <Toaster 
