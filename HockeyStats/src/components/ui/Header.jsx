@@ -1,3 +1,4 @@
+import HeaderMenu from "./HeaderMenu";
 import { Sizes } from "../../utils/constants";
 import Title from "./Title";
 import UserAvatar from "../authentication/UserAvatar";
@@ -19,7 +20,6 @@ const StyledHeader = styled.header`
 `;
 
 const StyledUser = styled.header`
-  gap: 2.4rem;
   justify-content: flex-end;
   flex-direction: row;
   display:flex;
@@ -34,6 +34,7 @@ const Header = () => {
         </Title>
         <StyledUser>
           <UserAvatar/>
+          <HeaderMenu/>
         </StyledUser>
       </StyledHeader>
     )

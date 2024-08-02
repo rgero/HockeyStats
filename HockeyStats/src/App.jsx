@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import AppLayout from './components/ui/AppLayout';
+import { DarkModeProvider } from './context/DarkModeContext';
 import DashboardPage from './components/pages/DashboardPage';
 import GlobalStyles from './components/style/GlobalStyles';
 import LandingPage from './components/pages/LandingPage';
@@ -21,6 +22,7 @@ const queryClient = new QueryClient({
 
 const App = () => {
   return (
+    <DarkModeProvider>
       <QueryClientProvider client={queryClient}>
         <GlobalStyles/>
         <BrowserRouter>
@@ -59,6 +61,7 @@ const App = () => {
         />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
+    </DarkModeProvider>
   )
 }
 
