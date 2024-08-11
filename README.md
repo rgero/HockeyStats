@@ -4,25 +4,3 @@ This has always been true even back in high school when I'd track my stats for m
 
 ### The purpose of this website
 To enable a player to easily track their own progress/stats. When fully operational the user will be able to log games and get their stats based on those games.
-
-### Potential Features
- **Ability to log/edit games. A game should have the following inputs**
-- Position - This could be as simple as Skater/Goalie
-- Rink
-- Date
-- Time
-- Opponent
-- Team - This might be its own entry in the database since it'll be reused.
-- League - This might be its own entry in the database since it'll be reused.
-- Result
-- Notes
-
-The Skater form should include the following
-- Goals
-- Assists
-- Penalty Minutes
-- Shots
-
-The Goalie form should include the following
-- Goals Against
-- Saves
