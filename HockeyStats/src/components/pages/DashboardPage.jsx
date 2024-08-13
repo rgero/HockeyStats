@@ -1,34 +1,17 @@
-import Button from "../ui/Button";
-import Heading from "../ui/Heading";
+import { Container, Divider } from "@mui/material";
+
+import DashboardHeader from "../dashboard/DashboardHeader";
 import Row from "../ui/Row";
-import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
-
-const StyledDashboard = styled.div`
-  height: 100vh;
-  background-color: var(--color-grey-50);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const StyledRow = styled(Row)`
-  margin-top: 3rem;
-`
 
 const DashboardPage = () => {
-  const navigate = useNavigate();
   return (
-      <StyledDashboard>
-        <Heading as="h1">Dashboard</Heading>
+      <Container>
+        <DashboardHeader/>
+        <Divider/>
         <Row>
-          The page you are looking for has not been found.
+          This is the example dashboard. Likely will contain stats, recent games, etc.
         </Row>
-        <StyledRow>
-          <Button onClick={()=> navigate("/")}>Click here to return</Button>
-        </StyledRow>
-      </StyledDashboard>
+      </Container>
   )
 }
 
