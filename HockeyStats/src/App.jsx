@@ -2,9 +2,12 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import Account from './components/pages/Account';
+import AddGamePage from './components/pages/games/AddGamePage';
 import AppLayout from './components/ui/AppLayout';
 import { DarkModeProvider } from './context/DarkModeContext';
 import DashboardPage from './components/pages/DashboardPage';
+import GameDetails from './components/pages/games/GameDetails';
+import GamesOverviewPage from './components/pages/games/GamesOverviewPage';
 import GlobalStyles from './components/style/GlobalStyles';
 import LandingPage from './components/pages/LandingPage';
 import PageNotFound from './components/pages/PageNotFound';
@@ -38,7 +41,12 @@ const App = () => {
               <Route index element={<Navigate replace to="dashboard"/>}/>
               <Route path="dashboard" element={<DashboardPage/>}/>
               <Route path='account' element={<Account/>} />
+              <Route path="games" element={<GamesOverviewPage/>}>
+                <Route path="add" element={<AddGamePage/>}/>
+                <Route path="details/:id" element={<GameDetails/>}/>
+              </Route>
             </Route>
+
             <Route path="landing" element={<LandingPage/>} />
             <Route path='*' element={<PageNotFound/>} />
           </Routes>
